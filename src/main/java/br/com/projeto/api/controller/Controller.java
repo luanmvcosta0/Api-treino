@@ -3,7 +3,7 @@ package br.com.projeto.api.controller;
 import org.springframework.web.bind.annotation.RestController;
 
 import br.com.projeto.api.model.Pessoa;
-import br.com.projeto.api.repositorio.Repositorio;
+import br.com.projeto.api.repository.Repositorio;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
