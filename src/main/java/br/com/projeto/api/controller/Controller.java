@@ -5,6 +5,8 @@ import org.springframework.web.bind.annotation.RestController;
 import br.com.projeto.api.model.Pessoa;
 import br.com.projeto.api.repository.Repositorio;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -21,6 +23,16 @@ public class Controller {
     @PostMapping("/api")
     public Pessoa cadastrar(@RequestBody Pessoa obj) {
         return acao.save(obj);
+    }
+
+    @GetMapping("/api")
+    public List<Pessoa> selecionar(){
+        return acao.findAll();
+    }
+
+    @GetMapping("/api/{codigo}")
+    public Pessoa selecionarPeloCodigo(@PathVariable int codigo) {
+        return acao.findByCodigo(codigo);
     }
 
     @GetMapping("/teste")
