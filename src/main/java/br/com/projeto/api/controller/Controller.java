@@ -64,6 +64,10 @@ public class Controller {
         return acao.findByNomeOrderByIdadeDesc("Lucca");
     }
 
+    @GetMapping("/api/nomeContem")
+    public List<Pessoa> nomeContem() {
+        return acao.findByNomeContaining("Lu");
+    }
 
     @GetMapping("/teste")
     public String testar() {
