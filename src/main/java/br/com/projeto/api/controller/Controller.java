@@ -54,6 +54,17 @@ public class Controller {
         return acao.count();
     }
 
+    @GetMapping("/api/ordenarNomes")
+    public List<Pessoa> ordenarNomes() {
+        return acao.findByOrderByNome();
+    }
+
+    @GetMapping("/api/ordenarNomes2")
+    public List<Pessoa> ordenarNomes2() {
+        return acao.findByNomeOrderByIdadeDesc("Lucca");
+    }
+
+
     @GetMapping("/teste")
     public String testar() {
         return "teste feito";
