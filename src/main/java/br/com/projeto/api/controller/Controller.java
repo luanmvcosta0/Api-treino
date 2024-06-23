@@ -49,6 +49,11 @@ public class Controller {
         acao.delete(obj);
     }
 
+    @GetMapping("/api/contador")
+    public long contador() {
+        return acao.count();
+    }
+
     @GetMapping("/teste")
     public String testar() {
         return "teste feito";
