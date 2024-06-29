@@ -69,6 +69,16 @@ public class Controller {
         return acao.findByNomeContaining("Lu");
     }
 
+    @GetMapping("/api/iniciaCom")
+    public List<Pessoa> inciaCom() {
+        return acao.findByNomeStartsWith("L");
+    }
+
+    @GetMapping("/api/terminaCom") 
+    public List<Pessoa> terminaCom() {
+        return acao.findByNomeEndsWith("N");
+    }
+
     @GetMapping("/teste")
     public String testar() {
         return "teste feito";
