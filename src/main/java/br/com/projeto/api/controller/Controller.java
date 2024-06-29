@@ -79,6 +79,11 @@ public class Controller {
         return acao.findByNomeEndsWith("N");
     }
 
+    @GetMapping("/api/somaIdades")
+    public int somaIdades() {
+        return acao.somaIdades();
+    }
+
     @GetMapping("/teste")
     public String testar() {
         return "teste feito";
