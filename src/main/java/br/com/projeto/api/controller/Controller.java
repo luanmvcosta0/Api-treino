@@ -4,6 +4,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 import br.com.projeto.api.model.Pessoa;
 import br.com.projeto.api.repository.Repositorio;
+import br.com.projeto.api.servico.Servico;
 
 import java.util.List;
 
@@ -24,9 +25,12 @@ public class Controller {
     @Autowired
     private Repositorio acao;
 
+    @Autowired
+    private Servico servico;
+
     @PostMapping("/api")
-    public Pessoa cadastrar(@RequestBody Pessoa obj) {
-        return acao.save(obj);
+    public ResponseEntity<?> cadastrar(@RequestBody Pessoa obj) {
+        return servico.cadastrar(obj);
     }
 
     @GetMapping("/api")
