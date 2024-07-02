@@ -1,14 +1,14 @@
 package br.com.projeto.api.servico;
 
-import org.apache.catalina.startup.ClassLoaderFactory.Repository;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
-import org.springframework.web.servlet.mvc.method.annotation.ResponseBodyEmitter;
 
 import br.com.projeto.api.model.Mensagem;
 import br.com.projeto.api.model.Pessoa;
+import br.com.projeto.api.repository.Repositorio;
 
 @Service
 public class Servico {
@@ -18,7 +18,7 @@ public class Servico {
 
 
     @Autowired
-    private Repository acao;
+    private Repositorio acao;
 
 
     public ResponseEntity<?> cadastrar(Pessoa obj) {           // Passei como parametro um objeto do tipo Pessoa
