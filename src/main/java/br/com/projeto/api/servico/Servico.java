@@ -20,8 +20,9 @@ public class Servico {
     @Autowired
     private Repositorio acao;
 
-
+    //Método para cadastrar pesosas
     public ResponseEntity<?> cadastrar(Pessoa obj) {           // Passei como parametro um objeto do tipo Pessoa
+
         mensagem.setMensagem("O nome precisa ser preenchido.");
         if(obj.getNome().equals("")) {
             return new ResponseEntity<>(mensagem, HttpStatus.BAD_REQUEST);
@@ -34,4 +35,8 @@ public class Servico {
 
     }
 
+    //Método para selecionar pessoas
+    public ResponseEntity<?> selecionar() {
+        return new ResponseEntity<>(acao.findAll(), HttpStatus.OK);
+    }
 }
